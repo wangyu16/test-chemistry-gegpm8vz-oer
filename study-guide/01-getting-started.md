@@ -125,7 +125,5 @@ Temperature changes are unique because they affect the value of the equilibrium 
 
 ## New section{{attrs[#blk-t1djrcwxo0ef]}}
 
-
-::: info
 ![](materials/structures/m-xylene.ketcher.svg)
-:::
+
