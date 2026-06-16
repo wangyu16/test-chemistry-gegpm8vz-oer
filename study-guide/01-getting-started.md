@@ -123,3 +123,57 @@ Temperature changes are unique because they affect the value of the equilibrium 
 
 ![](materials/plots/test-chart.plot.svg)
 
+## 🟢 Results — opening days (11–12 June){{attrs[#blk-e1mycmh56wh1]}}
+
+- **Mexico 2–0 South Africa** — Quiñones 9', Jiménez 67'. Hosts open the
+  tournament with a comfortable win at the Estadio Azteca.
+- **South Korea 2–1 Czechia** — Krejčí put Czechia ahead; Hwang In-beom (67')
+  and Oh Hyeon-gyu (80') turned it around. Korea rallied from a goal down.
+- **USA 4–1 Paraguay** — Paraguay OG 7', **Balogun brace** (31', 45+), Reyna
+  with a trivela finish to close it out. The most emphatic opener of the host
+  nations, at SoFi Stadium, LA.
+- **Canada 1–1 Bosnia & Herzegovina** — Lukić headed Bosnia ahead; **Larin
+  78'** salvaged a point for Canada in Toronto.
+
+**Group A after MD1:** Mexico & South Korea lead on 3 pts; Czechia & South
+Africa on 0.
+
+---
+
+## 🔵 Coming up — your viewing windows (Hong Kong time){{attrs[#blk-pgk7y4zv88mm]}}
+
+US evening kickoffs land in your **early Sunday morning, ~6–9am HKT**.
+
+**Sat 13 June (US) → Sun 14 June AM HKT**
+- 🇧🇷 **Brazil vs Morocco** — New Jersey · ~6am HKT — the marquee tie of the day
+- 🇶🇦 Qatar vs Switzerland — San Francisco · Sun afternoon-into-morning HKT
+- 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Haiti vs Scotland — Boston · ~9am HKT
+- 🇦🇺 Australia vs Türkiye — Vancouver · ~9am HKT
+
+**Sun 14 June (US) → Mon 15 June AM HKT**
+- 🇩🇪 Germany vs Curaçao — Houston
+- 🇳🇱 **Netherlands vs Japan** — Dallas (one to watch for the Asian angle)
+- 🇨🇮 Ivory Coast vs Ecuador — Philadelphia
+- 🇸🇪 Sweden vs Tunisia — Monterrey
+
+---
+
+## 🟡 Peripheral news worth noticing{{attrs[#blk-ox2uyoiuj9z8]}}
+
+- **Empty seats & ticket backlash.** Dynamic/surge pricing has pushed prices
+  sky-high; visible empty blocks at early games drew an uproar. If you're
+  eyeing tickets, expect volatile resale pricing.
+- **VAR drama in the opener.** Mexico–South Africa featured a contentious
+  multi-card VAR review — early sign the officiating standard will be a
+  storyline all tournament.
+- **Politics around the gates.** US travel restrictions and the prospect of
+  immigration enforcement near venues have kept some fans/officials away;
+  host-nation friction (US–Mexico–Canada) is a running backdrop.
+- **Format note.** 48 teams / 12 groups: the top two from each group *plus* the
+  8 best third-placed teams advance — so even a loss rarely ends a run. Expect
+  more cautious group-stage math than past tournaments.
+
+---
+
+*Next digest lands ~7am HKT tomorrow. Reply with what you want more or less of —
+a team to follow, deeper tactical notes, betting odds, whatever — and I'll tune it.*
