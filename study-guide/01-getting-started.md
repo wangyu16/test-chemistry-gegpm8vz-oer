@@ -128,3 +128,37 @@ Temperature changes are unique because they affect the value of the equilibrium 
 ![](materials/structures/m-xylene.ketcher.svg)
 
 Add a new message
+
+## The Ideal Gas Constant (R){{attrs[#blk-dkquopbeekr3]}}
+
+The ideal gas constant, represented by the letter R, is a fundamental physical constant that appears in the ideal gas law and many other thermodynamic equations. Its primary role is to relate the pressure, volume, temperature, and amount of a gas.
+
+The ideal gas law is expressed as:
+$$PV = nRT$$
+Where:
+*   $P$ = Pressure of the gas
+*   $V$ = Volume of the gas
+*   $n$ = Amount of the gas in moles (mol)
+*   $R$ = The ideal gas constant
+*   $T$ = Temperature of the gas in Kelvin (K)
+
+A common point of confusion is that R can have different numerical values. **The value of R you use depends entirely on the units used for pressure and volume in the problem.** The units for the amount ($n$) and temperature ($T$) must almost always be moles and Kelvin, respectively.
+
+Here are the most common values for R and when to use them:
+
+*   **$R = 0.08206 \frac{\text{L} \cdot \text{atm}}{\text{mol} \cdot \text{K}}$**
+    *   This is the most frequently used value in introductory chemistry.
+    *   **Use this when:** Pressure is in atmospheres (atm) and volume is in liters (L).
+
+*   **$R = 8.314 \frac{\text{J}}{\text{mol} \cdot \text{K}}$**
+    *   This is the SI unit value for R. It is used when dealing with energy calculations. Notice that Joules (J), a unit of energy, can be expressed as pressure × volume ($1 \text{ J} = 1 \text{ Pa} \cdot \text{m}^3$).
+    *   **Use this when:** You are working with thermodynamic equations like $\Delta G^\circ = -RT\ln K$ or equations involving the kinetic energy of gas molecules. Pressure would be in Pascals (Pa) and volume in cubic meters (m³).
+
+*   **$R = 62.36 \frac{\text{L} \cdot \text{mmHg}}{\text{mol} \cdot \text{K}}$**
+    *   This value is convenient when pressure is measured in millimeters of mercury (mmHg) or torr (since 1 mmHg = 1 torr).
+    *   **Use this when:** Pressure is in mmHg (or torr) and volume is in liters (L).
+
+**How to choose the correct value of R:**
+1.  Look at the units for pressure and volume given in your problem.
+2.  Select the value of R whose units perfectly match the units in your problem.
+3.  If the units don't match any of the common R values, you must convert your given P or V values to match the units of the R value you want to use. For example, if you are given pressure in kPa and want to use the `0.08206` value, you must first convert kPa to atm.
