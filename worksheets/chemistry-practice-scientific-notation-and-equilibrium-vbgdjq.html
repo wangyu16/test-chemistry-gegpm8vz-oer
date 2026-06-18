@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Chemistry Practice: Scientific Notation and Equilibrium</title>
+<meta name="generator" content="Alembic (orz-markdown@1.0.0)">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.35/dist/katex.min.css">
+<style>
+/* ==========================================================================
+   Dark Elegant Theme — markdown-it-customize
+   Google Fonts: Cinzel (headings) · Source Serif 4 (body) · JetBrains Mono (code)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* --- common.css (inlined) --- */
+/* Shared structural rules for all themes. Theme files should keep visual styling
+   and variables, while this file handles cross-theme behavior and layout hooks. */
+
+.markdown-body table {
+  width: max-content;
+  max-width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+.markdown-body img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.markdown-body p > img {
+  display: inline;
+  margin: 0;
+}
+
+.markdown-body span.success,
+.markdown-body span.info,
+.markdown-body span.warning,
+.markdown-body span.danger {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.markdown-body div.smiles-render {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.markdown-body div.smiles-render canvas,
+.markdown-body canvas[data-smiles] {
+  display: block;
+  max-width: min(100%, 16rem);
+  height: auto;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.markdown-body span.qrcode {
+  display: inline-block;
+  position: relative;
+  padding: 4px;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+.markdown-body .qrcode__icon {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  font-size: 0.7rem;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  pointer-events: none;
+}
+
+.markdown-body span.qrcode:hover .qrcode__icon,
+.markdown-body span.qrcode:focus-visible .qrcode__icon,
+.markdown-body span.qrcode.is-expanded .qrcode__icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.markdown-body span.qrcode.is-expanded {
+  visibility: hidden;
+}
+
+.qrcode-overlay {
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  z-index: 10001;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: min(90vmin, 36rem) !important;
+  height: min(90vmin, 36rem) !important;
+  aspect-ratio: 1 / 1;
+  max-width: calc(100vw - 2rem) !important;
+  max-height: calc(100vh - 2rem) !important;
+  padding: 1.5rem !important;
+  background: rgba(10, 16, 24, 0.86) !important;
+  border-radius: 1rem !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: zoom-out;
+}
+
+.markdown-body span.qrcode svg,
+.qrcode-overlay svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.qrcode-overlay svg {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
+  flex: 0 1 auto;
+  object-fit: contain;
+}
+
+.qrcode-overlay .qrcode__icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media print {
+  table {
+    display: table !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+
+  tr,
+  img,
+  svg,
+  canvas,
+  iframe,
+  video,
+  pre,
+  blockquote,
+  .smiles-render,
+  .qrcode {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .youtube-embed {
+    display: none !important;
+  }
+
+  .qrcode__icon {
+    display: none !important;
+  }
+}
+/* --- end common.css --- */
+/* --------------------------------------------------------------------------
+   Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Palette */
+  --bg:            #0d0f18;
+  --bg-surface:    #13161f;
+  --bg-elevated:   #1c1f2e;
+  --bg-input:      #252836;
+  --border:        #2e3248;
+  --border-subtle: #1e2130;
+
+  --text-primary:  #e4e8f0;
+  --text-secondary:#9aa3b8;
+  --text-muted:    #60677d;
+  --text-heading:  #f0f4fc;
+  --text-heading-2: #c7d7ff;
+  --text-heading-3: #a9c1f0;
+  --text-heading-5: #8eaede;
+
+  --accent:        #5f8cff;  /* blue-violet */
+  --accent-dim:    #3f5fa8;
+  --accent-glow:   rgba(95, 140, 255, 0.15);
+
+  --link:          #82b4ff;
+  --link-visited:  #a9c2ff;
+
+  /* Code */
+  --code-bg:       #1a1d2e;
+  --code-text:     #cdd6f4;
+  --code-border:   #313554;
+
+  /* Semantic colours */
+  --success-bg:    #0d2318;  --success-border:#1a5e35;  --success-text:  #4ade80;
+  --info-bg:       #071c30;  --info-border:   #1a4f7a;  --info-text:     #60a5fa;
+  --warning-bg:    #231a07;  --warning-border:#7a560d;  --warning-text:  #fbbf24;
+  --danger-bg:     #230d0d;  --danger-border: #7a1a1a;  --danger-text:   #f87171;
+
+  /* Inline span colours */
+  --span-red:      #f87171;
+  --span-yellow:   #fbbf24;
+  --span-green:    #4ade80;
+  --span-blue:     #60a5fa;
+
+  /* Typography scale */
+  --base-size: 1rem;
+  --line-height: 1.75;
+  --fs-base:  var(--base-size); /* 16px default */
+  --fs-sm:    0.875rem;
+  --fs-xs:    0.8rem;
+  --fs-lg:    1.125rem;
+  --fs-xl:    1.25rem;
+  --lh-text:  var(--line-height);
+  --lh-tight: 1.3;
+
+  /* Spacing */
+  --gap:   1.5rem;
+  --gap-sm:0.75rem;
+  --gap-xs:0.375rem;
+
+  /* Radii */
+  --radius:    8px;
+  --radius-sm: 4px;
+  --radius-lg: 12px;
+
+  /* Transitions */
+  --t: 0.2s ease;
+
+  /* Markdown body container toggles */
+  --markdown-body-max-width: 860px;
+  --markdown-body-padding: clamp(1.5rem, 5vw, 3.5rem);
+  --markdown-body-border: 1px solid var(--border-subtle);
+  --markdown-body-radius: var(--radius-lg);
+  --markdown-body-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: var(--base-size);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Source Serif 4', Georgia, 'Noto Serif SC', 'Noto Serif TC', serif;
+  font-weight: 400;
+  line-height: var(--lh-text);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Scrollbars (WebKit)
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
+
+/* --------------------------------------------------------------------------
+   Article wrapper
+   -------------------------------------------------------------------------- */
+.markdown-body {
+  display: flow-root;
+  max-width: var(--markdown-body-max-width);
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border: var(--markdown-body-border);
+  border-radius: var(--markdown-body-radius);
+  box-shadow: var(--markdown-body-shadow);
+  padding: var(--markdown-body-padding);
+}
+
+/* --------------------------------------------------------------------------
+   Headings
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-family: 'Cinzel', Georgia, 'Noto Serif SC', 'Noto Serif TC', serif;
+  color: var(--text-heading);
+  line-height: var(--lh-tight);
+  font-weight: 700;
+  margin-top: 2.25em;
+  margin-bottom: 0.6em;
+  scroll-margin-top: 4rem;
+}
+h1:first-child, h2:first-child { margin-top: 0; }
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4em 1em;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+h2 {
+  font-size: clamp(1.4rem, 3vw, 1.875rem);
+  color: var(--text-heading-2);
+  border-bottom: 1px solid var(--accent-dim);
+  padding-bottom: 0.3em;
+}
+h3 {
+  font-size: 1.375rem;
+  color: var(--text-heading-3);
+  padding-left: 1.4em;
+  position: relative;
+}
+h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 999px;
+  background: var(--accent);
+}
+h4 { font-size: 1.125rem; font-weight: 600; color: var(--accent); }
+h5 { font-size: 1rem;     font-weight: 600; color: var(--text-heading-5); }
+h6 { font-size: 0.9rem;   font-weight: 600; color: var(--text-secondary); }
+
+/* Anchor links from markdown-it-anchor */
+.header-anchor {
+  float: left;
+  margin-left: -1.25em;
+  padding-right: 0.25em;
+  opacity: 0;
+  color: var(--accent);
+  text-decoration: none;
+  font-family: 'Source Serif 4', 'Noto Sans SC', 'Noto Sans TC', sans-serif;
+  font-size: 0.75em;
+  transition: opacity var(--t);
+}
+h1:hover .header-anchor,
+h2:hover .header-anchor,
+h3:hover .header-anchor,
+h4:hover .header-anchor { opacity: 0.6; }
+
+/* --------------------------------------------------------------------------
+   Paragraphs & Spacing
+   -------------------------------------------------------------------------- */
+p { margin-bottom: var(--gap); }
+p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   Links
+   -------------------------------------------------------------------------- */
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: rgba(130, 180, 255, 0.35);
+  text-underline-offset: 3px;
+  transition: color var(--t), text-decoration-color var(--t);
+}
+a:hover { color: #aecfff; text-decoration-color: rgba(174, 207, 255, 0.7); }
+a:visited { color: var(--link-visited); }
+
+/* --------------------------------------------------------------------------
+   Emphasis
+   -------------------------------------------------------------------------- */
+strong { font-weight: 600; color: var(--text-heading); }
+em { font-style: italic; }
+s, del { text-decoration: line-through; color: var(--text-muted); }
+mark { background: rgba(251, 191, 36, 0.25); color: #fde68a; border-radius: 2px; padding: 0 2px; }
+ins { text-decoration: underline; text-decoration-style: dashed; color: var(--span-green); }
+sub, sup { font-size: 0.75em; }
+
+/* --------------------------------------------------------------------------
+   Inline Code
+   -------------------------------------------------------------------------- */
+code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.875em;
+  background: var(--code-bg);
+  color: #9bc7ff;
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-sm);
+  padding: 0.15em 0.45em;
+}
+
+/* --------------------------------------------------------------------------
+   Code Blocks
+   -------------------------------------------------------------------------- */
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin-bottom: var(--gap);
+  position: relative;
+}
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: var(--fs-sm);
+  color: var(--code-text);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Blockquotes
+   -------------------------------------------------------------------------- */
+blockquote {
+  margin: var(--gap) 0;
+  padding: 0.85rem 1.35rem;
+  background: rgba(95, 140, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  font-style: italic;
+  position: relative;
+}
+blockquote > blockquote { border-left-color: var(--accent-dim); margin-top: 0.75rem; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   Lists
+   -------------------------------------------------------------------------- */
+ul, ol {
+  padding-left: 1.75em;
+  margin-bottom: var(--gap);
+}
+li {
+  margin-bottom: 0.35em;
+  line-height: var(--lh-text);
+}
+li > ul, li > ol { margin-top: 0.35em; margin-bottom: 0; }
+ul  { list-style-type: none; }
+ul  li::before {
+  content: '›';
+  color: var(--accent);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-weight: 600;
+}
+
+/* Task lists (markdown-it-task-lists) */
+.task-list-item { list-style: none; padding-left: 0; }
+.task-list-item::before { display: none; }
+.task-list-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.1em;
+  height: 1.1em;
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  background: var(--bg-input);
+  vertical-align: baseline;
+  margin-right: 0.5em;
+  cursor: default;
+  position: relative;
+  display: inline-block;
+  transition: border-color var(--t), background var(--t);
+}
+.task-list-item input[type="checkbox"]:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.task-list-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px; top: 0;
+  width: 5px; height: 9px;
+  border: 2px solid #fff;
+  border-top: none; border-left: none;
+  transform: rotate(45deg);
+}
+
+/* --------------------------------------------------------------------------
+   Tables
+   -------------------------------------------------------------------------- */
+.markdown-body > table, .markdown-body td table {
+  width: max-content;
+  max-width: 100%;
+}
+table {
+  border-collapse: collapse;
+  margin-bottom: var(--gap);
+  font-size: var(--fs-sm);
+}
+thead tr { background: var(--bg-elevated); }
+thead th {
+  font-family: 'Source Serif 4', 'Noto Sans SC', 'Noto Sans TC', sans-serif;
+  font-weight: 600;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  padding: 0.65rem 1rem;
+  border-bottom: 2px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: baseline;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+/* --------------------------------------------------------------------------
+   Horizontal Rule
+   -------------------------------------------------------------------------- */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 2.5rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   Images
+   -------------------------------------------------------------------------- */
+img {
+  border-radius: var(--radius);
+  margin: var(--gap) auto;
+}
+p > img { margin: 0; display: inline; }
+
+/* --------------------------------------------------------------------------
+   Footnotes (markdown-it-footnote)
+   -------------------------------------------------------------------------- */
+.footnotes-sep { margin: 2rem 0 1rem; }
+.footnotes {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1rem;
+}
+.footnotes ol { counter-reset: none; }
+.footnote-ref a, .footnote-backref {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+/* --------------------------------------------------------------------------
+   KaTeX overrides
+   -------------------------------------------------------------------------- */
+.katex { font-size: 1.1em; }
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+  margin: var(--gap) 0;
+}
+.katex-error {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  border: 1px solid var(--danger-border);
+  border-radius: var(--radius-sm);
+  padding: 0.15em 0.4em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: var(--fs-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Containers — Semantic colour boxes
+   -------------------------------------------------------------------------- */
+.success, .info, .warning, .danger {
+  border: 1px solid;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: var(--gap) 0;
+}
+.success { background: var(--success-bg); border-color: var(--success-border); }
+.info    { background: var(--info-bg);    border-color: var(--info-border);    }
+.warning { background: var(--warning-bg); border-color: var(--warning-border); }
+.danger  { background: var(--danger-bg);  border-color: var(--danger-border);  }
+
+.success > p:first-child > strong:first-child,
+.success > p:first-child > b:first-child { color: var(--success-text); }
+.info    > p:first-child > strong:first-child,
+.info    > p:first-child > b:first-child { color: var(--info-text); }
+.warning > p:first-child > strong:first-child,
+.warning > p:first-child > b:first-child { color: var(--warning-text); }
+.danger  > p:first-child > strong:first-child,
+.danger  > p:first-child > b:first-child { color: var(--danger-text); }
+
+/* Nested containers */
+.success .warning, .info .warning, .warning .warning, .danger .warning {
+  margin: var(--gap-sm) 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Containers — Layout (left / right / center)
+   -------------------------------------------------------------------------- */
+.left  { float: left;  margin: 0 var(--gap) var(--gap) 0; max-width: 45%; }
+.right { text-align: right; margin: 0 0 var(--gap); }
+.center {
+  text-align: center;
+  margin: var(--gap) auto;
+}
+
+/* --------------------------------------------------------------------------
+   Container — Spoiler (uses <details> rendered by custom container renderer)
+   -------------------------------------------------------------------------- */
+details.spoil {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  margin: var(--gap) 0;
+  overflow: hidden;
+}
+details.spoil > summary {
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background var(--t), color var(--t);
+}
+details.spoil > summary::-webkit-details-marker { display: none; }
+details.spoil > summary::before {
+  content: '▶';
+  font-size: 0.65em;
+  transition: transform var(--t);
+  display: inline-block;
+  color: var(--accent);
+}
+details.spoil[open] > summary::before { transform: rotate(90deg); }
+details.spoil > summary:hover { background: var(--bg-input); color: var(--text-primary); }
+details.spoil[open] > summary {
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+details.spoil > :not(summary) {
+  padding: 1rem 1.25rem;
+}
+details.spoil > p:last-child,
+details.spoil > *:last-child { padding-bottom: 1.25rem; }
+
+/* --------------------------------------------------------------------------
+   Container — Tabs
+   -------------------------------------------------------------------------- */
+.tabs {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: var(--gap) 0;
+}
+
+/* Tab bar — populated by JavaScript */
+.tabs-bar {
+  display: flex;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs-bar::-webkit-scrollbar { display: none; }
+
+.tabs-bar-btn {
+  padding: 0.6rem 1.1rem;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  font-family: 'Source Serif 4', 'Noto Sans SC', 'Noto Sans TC', sans-serif;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color var(--t), border-color var(--t), background var(--t);
+}
+.tabs-bar-btn:hover { color: var(--text-primary); background: rgba(255,255,255,0.04); }
+.tabs-bar-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Tab panels */
+.tab {
+  display: none;
+  padding: 1.25rem 1.5rem;
+}
+.tab.active { display: block; }
+/* Fallback: show all tabs when JS unavailable */
+.tabs:not([data-js]) .tab { display: block; }
+.tabs:not([data-js]) .tab + .tab { border-top: 1px solid var(--border-subtle); }
+
+/* --------------------------------------------------------------------------
+   Container — Columns
+   -------------------------------------------------------------------------- */
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gap);
+  margin: var(--gap) 0;
+  align-items: start;
+}
+.col {
+  min-width: 0; /* prevent overflow */
+}
+.col > p:last-child { margin-bottom: 0; }
+
+/* Responsive: single column on small screens */
+@media (max-width: 600px) {
+  .cols { grid-template-columns: 1fr; }
+  .left { float: none; max-width: 100%; margin: 0 0 var(--gap); }
+}
+
+/* --------------------------------------------------------------------------
+   TOC — in-document styles
+   (The toc plugin generates a nested <ul> at the {{toc}} position)
+   -------------------------------------------------------------------------- */
+.toc-wrapper {
+  /* Wraps the generated TOC list */
+}
+nav.toc, .toc-list {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: var(--gap) 0;
+  font-size: var(--fs-sm);
+}
+nav.toc ul, .toc-list ul {
+  padding-left: 1.25em;
+  margin-bottom: 0;
+}
+nav.toc li, .toc-list li { margin-bottom: 0.25em; }
+nav.toc li::before, .toc-list li::before { display: none; }
+nav.toc a, .toc-list a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--t);
+}
+nav.toc a:hover, .toc-list a:hover { color: var(--accent); }
+
+/* --------------------------------------------------------------------------
+   Span — Colour classes
+   -------------------------------------------------------------------------- */
+span.red    { color: var(--span-red); }
+span.yellow { color: var(--span-yellow); }
+span.green  { color: var(--span-green); }
+span.blue   { color: var(--span-blue); }
+
+/* --------------------------------------------------------------------------
+   Span — Badge classes
+   -------------------------------------------------------------------------- */
+span.success,
+span.info,
+span.warning,
+span.danger {
+  padding: 0.15em 0.55em;
+  border-radius: 999px;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  vertical-align: baseline;
+  border: 1px solid;
+}
+span.success { background: var(--success-bg); color: var(--success-text); border-color: var(--success-border); }
+span.info    { background: var(--info-bg);    color: var(--info-text);    border-color: var(--info-border);    }
+span.warning { background: var(--warning-bg); color: var(--warning-text); border-color: var(--warning-border); }
+span.danger  { background: var(--danger-bg);  color: var(--danger-text);  border-color: var(--danger-border);  }
+
+/* --------------------------------------------------------------------------
+   Custom plugin output styles
+   -------------------------------------------------------------------------- */
+
+/* test-block (Phase 5 — dev only) */
+div.test-block {
+  background: linear-gradient(135deg, #1a1a2e, #252848);
+  border: 1px dashed var(--accent-dim);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: var(--fs-sm);
+  color: var(--accent);
+  margin: var(--gap) 0;
+}
+
+/* test-inline (Phase 5 — dev only) */
+span.test-inline {
+  background: rgba(95, 140, 255, 0.12);
+  color: var(--accent);
+  border: 1px dashed var(--accent-dim);
+  border-radius: var(--radius-sm);
+  padding: 0.1em 0.4em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+}
+
+/* YouTube embed (Phase 8) */
+div.youtube-embed {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #000;
+  margin: var(--gap) 0;
+}
+div.youtube-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+/* Mermaid diagrams (Phase 10) */
+div.mermaid {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: var(--gap) 0;
+  overflow-x: auto;
+  text-align: center;
+}
+
+/* SMILES / chemical structures (Phase 11) */
+div.smiles-render {
+  border-radius: 0;
+}
+div.smiles-render canvas {
+  border-radius: 0;
+}
+
+/* QR code (Phase 9) */
+span.qrcode {
+  vertical-align: baseline;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding: 4px;
+}
+
+/* Span with arbitrary class (Phase 7) */
+.markdown-body span[class]:not(.test-inline):not(.qrcode):not(.katex):not(.katex-inner)
+:not(.success):not(.info):not(.warning):not(.danger)
+:not(.red):not(.yellow):not(.green):not(.blue) {
+  /* fallback for unrecognised span classes */
+}
+
+/* --------------------------------------------------------------------------
+   Focus indicators (keyboard navigation)
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+.tabs-bar-btn:focus-visible,
+details.spoil > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+.task-list-item input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Print
+   -------------------------------------------------------------------------- */
+@media print {
+  body { background: #fff; color: #000; padding: 0; }
+  .markdown-body { background: #fff; border: none; box-shadow: none; padding: 0; max-width: 100%; }
+  a { color: #000; text-decoration: underline; }
+  code { background: #f4f4f4; border: 1px solid #ccc; }
+  pre  { background: #f4f4f4; }
+  blockquote { border-left-color: #aaa; background: #f9f9f9; }
+  tr, iframe, video, pre, blockquote {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="markdown-body">
+<p><a href="../index.html">← Test Chemistry</a></p>
+<h1>Chemistry Practice: Scientific Notation and Equilibrium</h1>
+<h1 id="chemistry-practice%3A-scientific-notation-and-equilibrium" tabindex="-1">Chemistry Practice: Scientific Notation and Equilibrium</h1>
+<h3 id="section-1%3A-scientific-notation" tabindex="-1">Section 1: Scientific Notation</h3>
+<ol>
+<li>
+<p><strong>Multiple Choice:</strong> Which of the following numbers is NOT written in correct scientific notation?
+a) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5.67</mn><mo>×</mo><msup><mn>10</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">5.67 \times 10^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5.67</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>
+b) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.88</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">0.88 \times 10^{-2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0.88</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span>
+c) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.00</mn><mo>×</mo><msup><mn>10</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">1.00 \times 10^7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1.00</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span>
+d) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9.99</mn><mo>×</mo><msup><mn>10</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">9.99 \times 10^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">9.99</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>For the number <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.25</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup></mrow><annotation encoding="application/x-tex">7.25 \times 10^{-6}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">7.25</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span>:
+a) What is the coefficient (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span>)?
+b) What is the exponent (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>)?
+c) Is the original number represented by this scientific notation extremely large or extremely small?</p>
+</li>
+<li>
+<p>Convert the following numbers from standard form to scientific notation:
+a) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>87</mn><mo separator="true">,</mo><mn>600</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">87,600,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">87</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">600</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span></span></span></span>
+b) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.000000105</mn></mrow><annotation encoding="application/x-tex">0.000000105</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.000000105</span></span></span></span>
+c) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo separator="true">,</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">4,500</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">500</span></span></span></span>
+d) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.0032</mn></mrow><annotation encoding="application/x-tex">0.0032</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.0032</span></span></span></span>
+e) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>602</mn><mo separator="true">,</mo><mn>200</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>000</mn><mo separator="true">,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">602,200,000,000,000,000,000,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">602</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">200</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span></span></span></span> (Avogadro’s number)</p>
+</li>
+<li>
+<p>Convert the following numbers from scientific notation to standard form:
+a) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.2</mn><mo>×</mo><msup><mn>10</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">1.2 \times 10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1.2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span>
+b) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9.81</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">9.81 \times 10^{-3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">9.81</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span>
+c) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5.0</mn><mo>×</mo><msup><mn>10</mn><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">5.0 \times 10^0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5.0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span>
+d) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3.14159</mn><mo>×</mo><msup><mn>10</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">3.14159 \times 10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3.14159</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span>
+e) <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7.00</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>7</mn></mrow></msup></mrow><annotation encoding="application/x-tex">7.00 \times 10^{-7}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">7.00</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>Explain in your own words why scientific notation is useful in chemistry. Provide an example of a chemical quantity that would benefit from being expressed in scientific notation.</p>
+</li>
+</ol>
+<h3 id="section-2%3A-le-chatelier%E2%80%99s-principle" tabindex="-1">Section 2: Le Chatelier’s Principle</h3>
+<p>Consider the following equilibrium reaction, which is exothermic:
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mtext> </mtext><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">O</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo><mrow></mrow><mo>+</mo><mrow></mrow><mi mathvariant="normal">O</mi><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo><mover><mo stretchy="true" minsize="3.0em">⇌</mo><mpadded width="+0.6em" lspace="0.3em"><mrow></mrow></mpadded></mover><mn>2</mn><mtext> </mtext><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">O</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{2SO2(g) + O2(g) &lt;=&gt; 2SO3(g)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathrm">SO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span><span class="mord"></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"></span><span class="mord mathrm">O</span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel x-arrow"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.719em;"><span style="top:-3.435em;"><span class="pstrut" style="height:2.716em;"></span><span class="sizing reset-size6 size3 mtight x-arrow-pad"><span class="mord mtight"></span></span></span><span class="svg-align" style="top:-2.608em;"><span class="pstrut" style="height:2.716em;"></span><span class="stretchy" style="height:0.716em;min-width:1.75em;"><span class="halfarrow-left" style="height:0.716em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.716em" viewBox="0 0 400000 716" preserveAspectRatio="xMinYMin slice"><path d="M7 435c-4 4-6.3 8.7-7 14 0 5.3.7 9 2 11s5.3 5.3 12
+ 10c90.7 54 156 130 196 228 3.3 10.7 6.3 16.3 9 17 2 .7 5 1 9 1h5c10.7 0 16.7
+-2 18-6 2-2.7 1-9.7-3-21-32-87.3-82.7-157.7-152-211l-3-3h399907v-40H7zm93 0
+v40h399900v-40zM0 241v40h399900v-40zm0 0v40h399900v-40z"/></svg></span><span class="halfarrow-right" style="height:0.716em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.716em" viewBox="0 0 400000 716" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399993c4.7-4.7 7-9.3 7-14 0-9.3-3.7-15.3-11
+-18-92.7-56.7-159-133.7-199-231-3.3-9.3-6-14.7-8-16-2-1.3-7-2-15-2-10.7 0-16.7
+ 2-18 6-2 2.7-1 9.7 3 21 15.3 42 36.7 81.8 64 119.5 27.3 37.7 58 69.2 92 94.5z
+m0 0v40h399900v-40z m100 194v40h399900v-40zm0 0v40h399900v-40z"/></svg></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.108em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathrm">SO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span></span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>H</mi><mo>=</mo><mo>−</mo><mn>198</mn><mtext> kJ</mtext></mrow><annotation encoding="application/x-tex">\Delta H = -198 \text{ kJ}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">198</span><span class="mord text"><span class="mord"> kJ</span></span></span></span></span></p>
+<p>For each of the following changes (stresses), predict the direction the equilibrium will shift (left, right, or no shift) to re-establish equilibrium:</p>
+<ol start="6">
+<li>
+<p>Adding more <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">O</mi><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{O2(g)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">O</span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span></span></span></span></span> to the system.
+Shift: ____________________________</p>
+</li>
+<li>
+<p>Removing some <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">S</mi><mi mathvariant="normal">O</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{SO3(g)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">SO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span></span></span></span></span> from the system.
+Shift: ____________________________</p>
+</li>
+<li>
+<p>Increasing the temperature of the system.
+Shift: ____________________________</p>
+</li>
+<li>
+<p>Decreasing the volume of the reaction container (which increases pressure).
+Shift: ____________________________</p>
+</li>
+<li>
+<p>Adding a catalyst to the reaction mixture.
+Shift: ____________________________</p>
+</li>
+<li>
+<p>Adding an inert gas (like argon) to the reaction container at constant volume.
+Shift: ____________________________</p>
+</li>
+<li>
+<p>Consider the endothermic decomposition of calcium carbonate:
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">C</mi><mi mathvariant="normal">O</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">s</mi><mo stretchy="false">)</mo><mover><mo stretchy="true" minsize="3.0em">⇌</mo><mpadded width="+0.6em" lspace="0.3em"><mrow></mrow></mpadded></mover><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">O</mi></mrow><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">s</mi><mo stretchy="false">)</mo><mrow></mrow><mo>+</mo><mrow></mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">O</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{CaCO3(s) &lt;=&gt; CaO(s) + CO2(g)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">CaCO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel x-arrow"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.719em;"><span style="top:-3.435em;"><span class="pstrut" style="height:2.716em;"></span><span class="sizing reset-size6 size3 mtight x-arrow-pad"><span class="mord mtight"></span></span></span><span class="svg-align" style="top:-2.608em;"><span class="pstrut" style="height:2.716em;"></span><span class="stretchy" style="height:0.716em;min-width:1.75em;"><span class="halfarrow-left" style="height:0.716em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.716em" viewBox="0 0 400000 716" preserveAspectRatio="xMinYMin slice"><path d="M7 435c-4 4-6.3 8.7-7 14 0 5.3.7 9 2 11s5.3 5.3 12
+ 10c90.7 54 156 130 196 228 3.3 10.7 6.3 16.3 9 17 2 .7 5 1 9 1h5c10.7 0 16.7
+-2 18-6 2-2.7 1-9.7-3-21-32-87.3-82.7-157.7-152-211l-3-3h399907v-40H7zm93 0
+v40h399900v-40zM0 241v40h399900v-40zm0 0v40h399900v-40z"/></svg></span><span class="halfarrow-right" style="height:0.716em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.716em" viewBox="0 0 400000 716" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399993c4.7-4.7 7-9.3 7-14 0-9.3-3.7-15.3-11
+-18-92.7-56.7-159-133.7-199-231-3.3-9.3-6-14.7-8-16-2-1.3-7-2-15-2-10.7 0-16.7
+ 2-18 6-2 2.7-1 9.7 3 21 15.3 42 36.7 81.8 64 119.5 27.3 37.7 58 69.2 92 94.5z
+m0 0v40h399900v-40z m100 194v40h399900v-40zm0 0v40h399900v-40z"/></svg></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.108em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord mathrm">CaO</span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm">s</span><span class="mclose">)</span><span class="mord"></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"></span><span class="mord"><span class="mord mathrm">CO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span></span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>H</mi><mo>=</mo><mo>+</mo><mn>178</mn><mtext> kJ</mtext></mrow><annotation encoding="application/x-tex">\Delta H = +178 \text{ kJ}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord">+</span><span class="mord">178</span><span class="mord text"><span class="mord"> kJ</span></span></span></span></span></p>
+<p>How would each of the following changes affect the amount of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">O</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{CO2(g)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">CO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span></span></span></span></span> present at equilibrium? (Increase, Decrease, or No Change)
+a) Increasing the temperature.
+b) Decreasing the pressure by removing some <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">O</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{CO2(g)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">CO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span></span></span></span></span>.
+c) Adding more solid <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">C</mi><mi mathvariant="normal">O</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{CaCO3(s)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">CaCO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm">s</span><span class="mclose">)</span></span></span></span></span>.
+d) Increasing the total pressure by adding <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">O</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{CO2(g)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">CO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span></span></span></span></span>.</p>
+</li>
+<li>
+<p>True or False: A catalyst speeds up the forward reaction more than the reverse reaction, thereby shifting the equilibrium towards the products. Explain your answer.</p>
+</li>
+<li>
+<p>For the reaction <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">P</mi><mi mathvariant="normal">C</mi><mi mathvariant="normal">l</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>5</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo><mover><mo stretchy="true" minsize="3.0em">⇌</mo><mpadded width="+0.6em" lspace="0.3em"><mrow></mrow></mpadded></mover><mrow><mi mathvariant="normal">P</mi><mi mathvariant="normal">C</mi><mi mathvariant="normal">l</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo><mrow></mrow><mo>+</mo><mrow></mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">l</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{PCl5(g) &lt;=&gt; PCl3(g) + Cl2(g)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">PCl</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel x-arrow"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.719em;"><span style="top:-3.435em;"><span class="pstrut" style="height:2.716em;"></span><span class="sizing reset-size6 size3 mtight x-arrow-pad"><span class="mord mtight"></span></span></span><span class="svg-align" style="top:-2.608em;"><span class="pstrut" style="height:2.716em;"></span><span class="stretchy" style="height:0.716em;min-width:1.75em;"><span class="halfarrow-left" style="height:0.716em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.716em" viewBox="0 0 400000 716" preserveAspectRatio="xMinYMin slice"><path d="M7 435c-4 4-6.3 8.7-7 14 0 5.3.7 9 2 11s5.3 5.3 12
+ 10c90.7 54 156 130 196 228 3.3 10.7 6.3 16.3 9 17 2 .7 5 1 9 1h5c10.7 0 16.7
+-2 18-6 2-2.7 1-9.7-3-21-32-87.3-82.7-157.7-152-211l-3-3h399907v-40H7zm93 0
+v40h399900v-40zM0 241v40h399900v-40zm0 0v40h399900v-40z"/></svg></span><span class="halfarrow-right" style="height:0.716em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.716em" viewBox="0 0 400000 716" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399993c4.7-4.7 7-9.3 7-14 0-9.3-3.7-15.3-11
+-18-92.7-56.7-159-133.7-199-231-3.3-9.3-6-14.7-8-16-2-1.3-7-2-15-2-10.7 0-16.7
+ 2-18 6-2 2.7-1 9.7 3 21 15.3 42 36.7 81.8 64 119.5 27.3 37.7 58 69.2 92 94.5z
+m0 0v40h399900v-40z m100 194v40h399900v-40zm0 0v40h399900v-40z"/></svg></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.108em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord mathrm">PCl</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span><span class="mord"></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"></span><span class="mord"><span class="mord mathrm">Cl</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span></span></span></span></span>, describe two distinct ways to increase the equilibrium concentration of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">l</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{Cl2(g)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">Cl</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span></span></span></span></span>.</p>
+</li>
+<li>
+<p>In an industrial process, how would you manipulate temperature and pressure to maximize the yield of ammonia (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">H</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded></msub></mrow><annotation encoding="application/x-tex">\ce{NH3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">NH</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span>) in the Haber-Bosch process:
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">N</mi><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo><mrow></mrow><mo>+</mo><mrow></mrow><mn>3</mn><mtext> </mtext><mi mathvariant="normal">H</mi><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo><mover><mo stretchy="true" minsize="3.0em">⇌</mo><mpadded width="+0.6em" lspace="0.3em"><mrow></mrow></mpadded></mover><mn>2</mn><mtext> </mtext><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">H</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded></msub><mspace width="0.1111em"/><mo stretchy="false">(</mo><mi mathvariant="normal">g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{N2(g) + 3H2(g) &lt;=&gt; 2NH3(g)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">N</span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span><span class="mord"></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathrm">H</span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel x-arrow"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.719em;"><span style="top:-3.435em;"><span class="pstrut" style="height:2.716em;"></span><span class="sizing reset-size6 size3 mtight x-arrow-pad"><span class="mord mtight"></span></span></span><span class="svg-align" style="top:-2.608em;"><span class="pstrut" style="height:2.716em;"></span><span class="stretchy" style="height:0.716em;min-width:1.75em;"><span class="halfarrow-left" style="height:0.716em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.716em" viewBox="0 0 400000 716" preserveAspectRatio="xMinYMin slice"><path d="M7 435c-4 4-6.3 8.7-7 14 0 5.3.7 9 2 11s5.3 5.3 12
+ 10c90.7 54 156 130 196 228 3.3 10.7 6.3 16.3 9 17 2 .7 5 1 9 1h5c10.7 0 16.7
+-2 18-6 2-2.7 1-9.7-3-21-32-87.3-82.7-157.7-152-211l-3-3h399907v-40H7zm93 0
+v40h399900v-40zM0 241v40h399900v-40zm0 0v40h399900v-40z"/></svg></span><span class="halfarrow-right" style="height:0.716em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="0.716em" viewBox="0 0 400000 716" preserveAspectRatio="xMaxYMin slice"><path d="M0 241v40h399993c4.7-4.7 7-9.3 7-14 0-9.3-3.7-15.3-11
+-18-92.7-56.7-159-133.7-199-231-3.3-9.3-6-14.7-8-16-2-1.3-7-2-15-2-10.7 0-16.7
+ 2-18 6-2 2.7-1 9.7 3 21 15.3 42 36.7 81.8 64 119.5 27.3 37.7 58 69.2 92 94.5z
+m0 0v40h399900v-40z m100 194v40h399900v-40zm0 0v40h399900v-40z"/></svg></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.108em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathrm">NH</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1111em;"></span><span class="mopen">(</span><span class="mord mathrm" style="margin-right:0.0139em;">g</span><span class="mclose">)</span></span></span></span></span> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>H</mi><mo>=</mo><mo>−</mo><mn>92</mn><mtext> kJ</mtext></mrow><annotation encoding="application/x-tex">\Delta H = -92 \text{ kJ}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">92</span><span class="mord text"><span class="mord"> kJ</span></span></span></span></span>
+a) To maximize <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">H</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded></msub></mrow><annotation encoding="application/x-tex">\ce{NH3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">NH</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> yield, would you use a high or low temperature? Explain why.
+b) To maximize <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">H</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded></msub></mrow><annotation encoding="application/x-tex">\ce{NH3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">NH</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.0785em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> yield, would you use a high or low pressure? Explain why.</p>
+</li>
+</ol>
+
+</div>
+</body>
+</html>
